@@ -10,9 +10,7 @@ const FAVOURITE =require('./routes/favourites');
 const CART=  require('./routes/cart');
 const ORDER=  require('./routes/order');
 
-app.use(cors({
-    origin:["https://book-bandar.vercel.app"]
-}));
+app.use(cors());
 
 
 //routes
@@ -22,12 +20,12 @@ app.use("/api/v1",FAVOURITE);
 app.use("/api/v1",CART);    
 app.use("/api/v1",ORDER);    
 
-app.get('/',(req,res)=>{
-    res.send({
-        activeStatus:true,
-        error:false,
-    })
-})
+// app.get('/',(req,res)=>{
+//     res.send({
+//         activeStatus:true,
+//         error:false,
+//     })
+// })
 
 
 //creating a port
