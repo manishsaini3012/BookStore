@@ -10,7 +10,9 @@ const FAVOURITE =require('./routes/favourites');
 const CART=  require('./routes/cart');
 const ORDER=  require('./routes/order');
 
-app.use(cors());
+app.use(cors({
+    origin:["https://book-bandar.vercel.app"]
+}));
 
 
 //routes
