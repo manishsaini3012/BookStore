@@ -27,7 +27,7 @@ app.get('/',(req,res)=>{
         activeStatus:true,
         error:false,
     })
-})
+});
 
 
 //creating a port
