@@ -8,7 +8,7 @@ const RecentlyAdded = () => {
     const[Data,setData]=useState();
     useEffect(()=>{
         const fetch =async()=>{
-         const response=   await axios.get(`${BACKEND_URL}/get-recent-books`);
+         const response=   await axios.get(`${BACKEND_URL}/api/v1/get-recent-books`);
          setData (response.data.data);
         };
         fetch();
