@@ -22,7 +22,7 @@ app.use("/api/v1",FAVOURITE);
 app.use("/api/v1",CART);    
 app.use("/api/v1",ORDER);    
 
-app.get((req,res)=>{
+app.get('/',(req,res)=>{
     res.send({
         activeStatus:true,
         error:false,
