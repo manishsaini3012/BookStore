@@ -14,11 +14,18 @@ app.use(cors());
 
 
 //routes
-app.use("/api/v1",User);
+app.use("/api/v1",User);  
 app.use("/api/v1",Books);
 app.use("/api/v1",FAVOURITE);
 app.use("/api/v1",CART);    
 app.use("/api/v1",ORDER);    
+
+app.get('/',(req,res)=>{
+    res.send({
+        activeStatus:true,
+        error:false,
+    })
+})
 
 
 //creating a port
