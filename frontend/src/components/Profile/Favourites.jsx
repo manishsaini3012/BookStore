@@ -4,6 +4,7 @@ import axios from "axios";
 import BookCard from '../BookCard/BookCard';
 
 const Favourites = () => {
+   const BACKEND_URL= process.env.BACKEND_URL;
   const [FavouriteBooks, setFavouriteBooks] = useState();
   const headers={
      id:localStorage.getItem("id"),
@@ -11,7 +12,7 @@ const Favourites = () => {
   };
 useEffect(() => {
   const fetch= async()=>{
-    const response= await axios.get("https://book-store-z6bl.vercel.app/api/v1/get-favourite-book", 
+    const response= await axios.get(`${BACKEND_URL}/get-favourite-book`, 
       {headers}
     );
     setFavouriteBooks(response.data.data);

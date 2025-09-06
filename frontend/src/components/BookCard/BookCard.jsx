@@ -3,6 +3,7 @@ import {Link } from "react-router-dom";
 import axios from "axios";
 
 const BookCard = ({data, favourites}) => {  
+   const BACKEND_URL= process.env.BACKEND_URL;
    const headers={
      id:localStorage.getItem("id"),
      authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -11,7 +12,7 @@ const BookCard = ({data, favourites}) => {
 
   const handleRemoveBook = async() => {
     const response= await axios.put(
-      "https://book-store-z6bl.vercel.app/api/v1/remove-book-from-favourite",
+      `${BACKEND_URL}/remove-book-from-favourite`,
       {}, 
       {headers}
     );
