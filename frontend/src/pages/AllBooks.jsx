@@ -4,10 +4,11 @@ import axios from 'axios';
 import Loader from '../components/Loader/Loader';
 import BookCard from '../components/BookCard/BookCard';
 const AllBooks = () => {
+   const BACKEND_URL= process.env.BACKEND_URL;
   const[Data,setData]=useState();
     useEffect(()=>{
         const fetch =async()=>{
-         const response=   await axios.get("https://book-store-z6bl.vercel.app/api/v1/get-all-books");
+         const response=   await axios.get(`${BACKEND_URL}/get-all-books`);
          setData (response.data.data);
         };
         fetch();

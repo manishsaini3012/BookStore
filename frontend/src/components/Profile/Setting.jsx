@@ -3,6 +3,7 @@ import axios from 'axios';
 import Loader from '../Loader/Loader';
 
 const Settings = () => {
+   const BACKEND_URL= process.env.BACKEND_URL;
   const [Value, setValue] = useState({address:" "});
   const [ProfileData, setProfileData] = useState();  
      const headers={
@@ -17,7 +18,7 @@ const Settings = () => {
   useEffect(() => {
     const fetch = async() =>{
       const response = await axios.get(
-        "https://book-store-z6bl.vercel.app/api/v1/get-user-information",
+        `${BACKEND_URL}/get-user-information`,
         {headers}
       );
       setProfileData(response.data);
@@ -27,7 +28,7 @@ const Settings = () => {
   }, [])
 
   const submitAddress = async() =>{
-    const response= await axios.put("https://book-store-z6bl.vercel.app/api/v1/update-address",
+    const response= await axios.put(`${BACKEND_URL}/update-address`,
       Value,
       {headers}
     );

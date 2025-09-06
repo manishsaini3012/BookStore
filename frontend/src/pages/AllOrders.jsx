@@ -8,6 +8,7 @@ import { IoOpenOutline } from "react-icons/io5";
 import SeeUserData from './SeeUserData';
 
 const AllOrders = () => {
+   const BACKEND_URL= process.env.BACKEND_URL;
   const [AllOrders, setAllOrders] = useState();
   const [Options, setOptions] = useState(-1);
   const [Values, setValues] = useState({status: ""});
@@ -20,7 +21,7 @@ const AllOrders = () => {
   useEffect(() => {
    const fetch = async() =>{
     const response = await axios.get(
-      "https://book-store-z6bl.vercel.app/api/v1/get-all-orders",
+      `${BACKEND_URL}/get-all-orders`,
       {headers}
 
     );
@@ -37,7 +38,7 @@ const AllOrders = () => {
   const submitChanges = async(i) =>{
     const id = AllOrders[i]._id;
     const response = await axios.put(
-      `https://book-store-z6bl.vercel.app/api/v1/update-status/${id}`,
+      `${BACKEND_URL}/update-status/${id}`,
       Values,
       {headers}
     );

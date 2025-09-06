@@ -7,6 +7,7 @@ import Loader from '../components/Loader/Loader';
 import MobileNav from '../components/Profile/MobileNav';
 
 const Profile = () => {
+   const BACKEND_URL= process.env.BACKEND_URL;
   // const isLoggedIn=useSelector();
 const [Profile, setProfile]=useState();
 
@@ -16,7 +17,7 @@ const [Profile, setProfile]=useState();
   };
   useEffect(()=>{
     const fetch= async()=>{
-    const response= await axios.get("https://book-store-z6bl.vercel.app/api/v1/get-user-information",{headers});
+    const response= await axios.get(`${BACKEND_URL}/get-user-information`,{headers});
     setProfile(response.data);
     };
     fetch(); 

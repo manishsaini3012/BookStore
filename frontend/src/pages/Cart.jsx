@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { AiFillDelete } from "react-icons/ai";
 import axios from "axios";
 const Cart = () => {
+   const BACKEND_URL= process.env.BACKEND_URL;
   const navigate = useNavigate();
   const [Cart, setCart] = useState();
   const [Total, setTotal] = useState(0);
@@ -14,7 +15,7 @@ const Cart = () => {
   useEffect(() => {
    const fetch= async() =>{
     const res = await axios.get(
-      "https://book-store-z6bl.vercel.app/api/v1/get-user-cart",
+      `${BACKEND_URL}/get-user-cart`,
       {headers}
     );
     setCart(res.data.data);
@@ -24,7 +25,7 @@ const Cart = () => {
   
   const deleteItem= async(bookid)=>{
   const response = await axios.put(
-  `https://book-store-z6bl.vercel.app/api/v1/remove-book-from-cart/${bookid}`,
+  `${BACKEND_URL}/remove-book-from-cart/${bookid}`,
     {},
   {headers}
   );
@@ -46,7 +47,7 @@ const Cart = () => {
    const PlaceOrder = async ()=>{
     try{
       const response= await axios.post(
-        `https://book-store-z6bl.vercel.app/api/v1/place-order`,
+        `${BACKEND_URL}/place-order`,
         {order:Cart},
         {headers}
       );

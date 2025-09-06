@@ -2,6 +2,7 @@ import React, { useEffect,useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 const UpdateBook = () => {
+   const BACKEND_URL= process.env.BACKEND_URL;
     const [Data, setData] = useState({
         url: "",
         title: "",
@@ -36,7 +37,7 @@ const UpdateBook = () => {
                 alert("All fields are required");
             } else{
                 const response = await axios.put(
-                    "https://book-store-z6bl.vercel.app/api/v1/update-book",
+                    `${BACKEND_URL}/update-book`,
                     Data,
                     {headers}
                 );
@@ -62,7 +63,7 @@ const UpdateBook = () => {
       useEffect(() => {
           const fetch = async () => {
          
-              const response = await axios.get(`https://book-store-z6bl.vercel.app/api/v1/get-book-by-id/${id}`);
+              const response = await axios.get(`${BACKEND_URL}/get-book-by-id/${id}`);
               setData(response.data.data);
             
           };

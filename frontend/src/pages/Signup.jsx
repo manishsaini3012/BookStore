@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Signup = () => {
+   const BACKEND_URL= process.env.BACKEND_URL;
   const [form, setForm] = useState({
     username: '',
     email: '',
@@ -22,7 +23,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://book-store-z6bl.vercel.app/api/v1/sign-up", form);
+      const response = await axios.post(`${BACKEND_URL}/sign-up`, form);
       alert("Signup successfully", response.data.message);
       navigate("/logIn");
     } catch (error) {

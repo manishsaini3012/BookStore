@@ -4,6 +4,7 @@ import Loader from '../Loader/Loader';
 import { Link } from 'react-router-dom';
 
 const UserOrderHistory = () => {
+   const BACKEND_URL= process.env.BACKEND_URL;
   const [OrderHistory, setOrderHistory] = useState();
    const headers={
      id:localStorage.getItem("id"),
@@ -13,7 +14,7 @@ const UserOrderHistory = () => {
   useEffect(() => {
     const fetch = async() => {
     const response = await axios.get(
-      "https://book-store-z6bl.vercel.app/api/v1/get-order-history",
+      `${BACKEND_URL}/get-order-history`,
       {headers}
     );
     setOrderHistory(response.data.data);

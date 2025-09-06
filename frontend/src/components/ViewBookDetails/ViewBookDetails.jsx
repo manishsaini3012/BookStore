@@ -11,6 +11,7 @@ import { MdOutlineDeleteOutline } from "react-icons/md";
 
 
 const ViewBookDetails = () => {
+   const BACKEND_URL= process.env.BACKEND_URL;
   const { id } = useParams();
   const navigate = useNavigate();
   const [Data, setData] = useState();
@@ -21,7 +22,7 @@ const ViewBookDetails = () => {
   useEffect(() => {
     const fetch = async () => {
    
-        const response = await axios.get(`https://book-store-z6bl.vercel.app/api/v1/get-book-by-id/${id}`);
+        const response = await axios.get(`${BACKEND_URL}/get-book-by-id/${id}`);
         setData(response.data.data);
       
     };
@@ -34,7 +35,7 @@ const ViewBookDetails = () => {
      bookid:id,
   };
   const handleFavourites= async()=>{
-    const response= await axios.put("https://book-store-z6bl.vercel.app/api/v1/add-book-to-favourite",
+    const response= await axios.put(`${BACKEND_URL}/add-book-to-favourite`,
       {},
       {headers}
     );
@@ -42,14 +43,14 @@ const ViewBookDetails = () => {
   };
 
   const handleCart= async()=>{
-    const response= await axios.put("https://book-store-z6bl.vercel.app/api/v1/add-book-to-cart",
+    const response= await axios.put(`${BACKEND_URL}/add-book-to-cart`,
       {},
       {headers}
     );
     alert(response.data.message)
   };
   const deleteBook = async()=>{
-    const response = await axios.delete("https://book-store-z6bl.vercel.app/api/v1/delete-book",
+    const response = await axios.delete(`${BACKEND_URL}/delete-book`,
       {headers}
     );
     alert(response.data.message);  
