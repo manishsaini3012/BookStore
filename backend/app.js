@@ -11,7 +11,7 @@ const CART=  require('./routes/cart');
 const ORDER=  require('./routes/order');
 
 app.use(cors({
-    origin:["https://book-bandar.vercel.app"]
+    origin:["https://book-bhandar1.vercel.app"]
 }));
 
 
