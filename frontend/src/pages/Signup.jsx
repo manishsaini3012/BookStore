@@ -22,7 +22,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:1000/api/v1/sign-up", form);
+      const response = await axios.post("https://book-store-z6bl.vercel.app/api/v1/sign-up", form);
       alert("Signup successfully", response.data.message);
       navigate("/logIn");
     } catch (error) {

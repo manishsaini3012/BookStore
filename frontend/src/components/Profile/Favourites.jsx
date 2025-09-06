@@ -11,7 +11,7 @@ const Favourites = () => {
   };
 useEffect(() => {
   const fetch= async()=>{
-    const response= await axios.get("http://localhost:1000/api/v1/get-favourite-book", 
+    const response= await axios.get("https://book-store-z6bl.vercel.app/api/v1/get-favourite-book", 
       {headers}
     );
     setFavouriteBooks(response.data.data);

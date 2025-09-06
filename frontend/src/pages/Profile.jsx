@@ -16,7 +16,7 @@ const [Profile, setProfile]=useState();
   };
   useEffect(()=>{
     const fetch= async()=>{
-    const response= await axios.get("http://localhost:1000/api/v1/get-user-information",{headers});
+    const response= await axios.get("https://book-store-z6bl.vercel.app/api/v1/get-user-information",{headers});
     setProfile(response.data);
     };
     fetch(); 

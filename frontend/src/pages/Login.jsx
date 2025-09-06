@@ -105,7 +105,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:1000/api/v1/sign-in", form);
+      const response = await axios.post("https://book-store-z6bl.vercel.app/api/v1/sign-in", form);
 
       if (response && response.data) {
         dispatch(authActions.login());
