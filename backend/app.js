@@ -29,6 +29,11 @@ app.get('/',(req,res)=>{
     })
 })
 
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ error: true, message: "Something went wrong!" });
+});
+
 
 //creating a port
 app.listen(process.env.PORT,()=>{
