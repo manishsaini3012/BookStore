@@ -11,7 +11,7 @@ import { MdOutlineDeleteOutline } from "react-icons/md";
 
 
 const ViewBookDetails = () => {
-   const BACKEND_URL= process.env.BACKEND_URL;
+   const BACKEND_URL= process.env.REACT_BACKEND_URL;
   const { id } = useParams();
   const navigate = useNavigate();
   const [Data, setData] = useState();

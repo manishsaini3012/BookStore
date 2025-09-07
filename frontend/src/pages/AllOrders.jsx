@@ -8,12 +8,13 @@ import { IoOpenOutline } from "react-icons/io5";
 import SeeUserData from './SeeUserData';
 
 const AllOrders = () => {
-   const BACKEND_URL= process.env.BACKEND_URL;
+   
   const [AllOrders, setAllOrders] = useState();
   const [Options, setOptions] = useState(-1);
   const [Values, setValues] = useState({status: ""});
   const [userDiv, setUserDiv] = useState("hidden");
   const [userDivData, setUserDivData] = useState(null);
+  const BACKEND_URL= process.env.REACT_BACKEND_URL;
   const headers={
          id:localStorage.getItem("id"),
          authorization: `Bearer ${localStorage.getItem("token")}`,

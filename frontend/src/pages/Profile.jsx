@@ -7,7 +7,7 @@ import Loader from '../components/Loader/Loader';
 import MobileNav from '../components/Profile/MobileNav';
 
 const Profile = () => {
-   const BACKEND_URL= process.env.BACKEND_URL;
+  const BACKEND_URL= process.env.REACT_BACKEND_URL;
   // const isLoggedIn=useSelector();
 const [Profile, setProfile]=useState();
 
