@@ -4,12 +4,12 @@ import BookCard from '../BookCard/BookCard';
 import Loader from '../Loader/Loader';
 
 const RecentlyAdded = () => {
-  const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
+ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
     const[Data,setData]=useState();
     useEffect(()=>{
         const fetch =async()=>{
          const response=   await axios.get(`${BACKEND_URL}/get-recent-books`);
-         setData (response.data.data);
+         setData(response.data.data);
         };
         fetch();
     },[]);

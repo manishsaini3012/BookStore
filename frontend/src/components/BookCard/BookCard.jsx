@@ -3,7 +3,7 @@ import {Link } from "react-router-dom";
 import axios from "axios";
 
 const BookCard = ({data, favourites}) => {  
-   const BACKEND_URL= process.env.BACKEND_URL;
+   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
    const headers={
      id:localStorage.getItem("id"),
      authorization: `Bearer ${localStorage.getItem("token")}`,
