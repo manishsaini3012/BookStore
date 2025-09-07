@@ -3,7 +3,7 @@ import axios from 'axios';
 import Loader from '../Loader/Loader';
 
 const Settings = () => {
-   const BACKEND_URL= process.env.REACT_BACKEND_URL;
+    const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
   const [Value, setValue] = useState({address:" "});
   const [ProfileData, setProfileData] = useState();  
      const headers={

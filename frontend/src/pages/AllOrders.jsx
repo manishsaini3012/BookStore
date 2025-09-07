@@ -14,7 +14,7 @@ const AllOrders = () => {
   const [Values, setValues] = useState({status: ""});
   const [userDiv, setUserDiv] = useState("hidden");
   const [userDivData, setUserDivData] = useState(null);
-  const BACKEND_URL= process.env.REACT_BACKEND_URL;
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
   const headers={
          id:localStorage.getItem("id"),
          authorization: `Bearer ${localStorage.getItem("token")}`,

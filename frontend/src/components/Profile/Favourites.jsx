@@ -4,7 +4,7 @@ import axios from "axios";
 import BookCard from '../BookCard/BookCard';
 
 const Favourites = () => {
-   const BACKEND_URL= process.env.REACT_BACKEND_URL;
+    const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
   const [FavouriteBooks, setFavouriteBooks] = useState();
   const headers={
      id:localStorage.getItem("id"),

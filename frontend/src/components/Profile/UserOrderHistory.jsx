@@ -4,7 +4,7 @@ import Loader from '../Loader/Loader';
 import { Link } from 'react-router-dom';
 
 const UserOrderHistory = () => {
-   const BACKEND_URL= process.env.REACT_BACKEND_URL;
+    const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
   const [OrderHistory, setOrderHistory] = useState();
    const headers={
      id:localStorage.getItem("id"),
