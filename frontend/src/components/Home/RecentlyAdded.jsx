@@ -4,7 +4,7 @@ import BookCard from '../BookCard/BookCard';
 import Loader from '../Loader/Loader';
 
 const RecentlyAdded = () => {
-  const BACKEND_URL= process.env.REACT_BACKEND_URL;
+  const BACKEND_URL= process.env.REACT_APP_BACKEND_URL;
     const[Data,setData]=useState();
     useEffect(()=>{
         const fetch =async()=>{
